@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> 
+!! IMPORTANT QUESTION !!
+</title>
+<style>
+body {background-color: rgb(255, 178, 238);}
+h1 {color: #dd4dad;}
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff;
+}
+
+</style>
+</head>
+<body>
+    <img src="kib.gif" alt="tihi" width="200" height="200">
+    <h1>hey there!</h1>
+    
+    <div class="button-container">
+      <button>wHATS UP!</button>
+      <button>yesssss?</button>
+    </div>
+    
+<script>
+  // Function to create buttons with given names
+  function createButtons(names) {
+    const container = document.querySelector('.button-container');
+    container.innerHTML = ''; // Clear existing buttons
+    
+    names.forEach(name => {
+      const newButton = document.createElement('button');
+      newButton.textContent = name;
+      newButton.style.padding = '10px 20px';
+      newButton.style.backgroundColor = '#dd4dad';
+      newButton.style.color = 'white';
+      newButton.style.border = 'none';
+      newButton.style.cursor = 'pointer';
+      container.appendChild(newButton);
+    });
+  }
+  
+  // Function to create and append an image
+  function createImage(src, alt = '', width = 200, height = 200) {
+    const newImg = document.createElement('img');
+    newImg.src = src;
+    newImg.alt = alt;
+    newImg.width = width;
+    newImg.height = height;
+    document.body.appendChild(newImg); // Appends to the body; adjust if needed
+  }
+  
+  // Get the button container and header
+  const container = document.querySelector('.button-container');
+  const header = document.querySelector('h1');
+  const img = document.querySelector('img');
+
+  // Add click listeners to existing buttons
+  container.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+      const buttonText = event.target.textContent;
+      
+      // Change header based on button clicked
+      if (buttonText === 'wHATS UP!!' || buttonText === 'yesss?') {
+        header.textContent = `will you be my...`;
+        createButtons(['...', '...!']);
+      }  
+
+      else if (buttonText === '...' || buttonText === '...!') {
+        header.textContent = "VALENTINEE!";
+        img.src = "val.gif";
+        img.width = 300;
+        img.height = 300;
+        createButtons(['YESS PLEASE!!', 'ew no']);
+      }
+
+
+        else if (buttonText === 'ew no') {
+          header.textContent = "...";
+          img.src = "right.gif";
+          img.width = 300;
+          img.height = 300;
+          container.innerHTML = ''; 
+
+          createButtons(['i mean yes', 'i mean yes']);
+      }
+
+        else if (buttonText === 'YESS PLEASE!!' || buttonText === 'i mean yes') {
+          header.textContent = "YAYYY I LOVE YOUUU HONEYBEEE!!!";
+          img.src = "jump.gif";
+          img.width = 300;
+          img.height = 300;
+          createImage('yes.png', 'YAAA', 600, 600);
+          container.innerHTML = ''; 
+        }
+    }
+  });
+  
+
+  createButtons(['wHATS UP!!', 'yesss?']);
+</script>
+</body>
+</html>
